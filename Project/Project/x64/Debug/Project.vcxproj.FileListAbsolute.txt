@@ -1,0 +1,3 @@
+C:\Users\2212d\source\repos\Canditaes_repo\Project\Project\x64\Debug\Project.vcxproj.AssemblyReference.cache
+C:\Users\2212d\source\repos\Canditaes_repo\Project\Project\x64\Debug\Project.M_main.resources
+C:\Users\2212d\source\repos\Canditaes_repo\Project\Project\x64\Debug\Project.vcxproj.GenerateResource.cache
