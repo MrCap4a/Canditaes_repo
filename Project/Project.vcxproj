@@ -120,13 +120,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="M_candidates_list.cpp" />
     <ClCompile Include="M_main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="M_candidates_list.h">
-      <FileType>CppForm</FileType>
-    </ClInclude>
     <ClInclude Include="M_main.h">
       <FileType>CppForm</FileType>
     </ClInclude>
