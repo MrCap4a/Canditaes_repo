@@ -63,6 +63,27 @@ namespace Project {
 	private: System::Windows::Forms::Label^ Birth_city;
 	private: System::Windows::Forms::TextBox^ Birth_city_box;
 	private: System::Windows::Forms::Button^ Register;
+	private: System::Windows::Forms::Panel^ Delete_candidate_panel;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Button^ Go_back;
+	private: System::Windows::Forms::Button^ Delete;
+	private: System::Windows::Forms::Label^ label1;
+	private: System::Windows::Forms::Panel^ Change_candidate_panel;
+
+	private: System::Windows::Forms::ComboBox^ comboBox2;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::Label^ label4;
+	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::RadioButton^ radioButton8;
+	private: System::Windows::Forms::RadioButton^ radioButton7;
+	private: System::Windows::Forms::RadioButton^ radioButton6;
+	private: System::Windows::Forms::RadioButton^ radioButton5;
+	private: System::Windows::Forms::Button^ button2;
+
 
 
 
@@ -96,6 +117,9 @@ namespace Project {
 			this->delete_candidate_button = (gcnew System::Windows::Forms::Button());
 			this->Main_panel = (gcnew System::Windows::Forms::Panel());
 			this->Candidates_list_panel = (gcnew System::Windows::Forms::Panel());
+			this->Candidates_box = (gcnew System::Windows::Forms::RichTextBox());
+			this->Save_list_button = (gcnew System::Windows::Forms::Button());
+			this->Back_button = (gcnew System::Windows::Forms::Button());
 			this->Add_candidate_panel = (gcnew System::Windows::Forms::Panel());
 			this->Register = (gcnew System::Windows::Forms::Button());
 			this->Back = (gcnew System::Windows::Forms::Button());
@@ -110,12 +134,30 @@ namespace Project {
 			this->dateTimePicker = (gcnew System::Windows::Forms::DateTimePicker());
 			this->Name_label = (gcnew System::Windows::Forms::Label());
 			this->Input_name_box = (gcnew System::Windows::Forms::TextBox());
-			this->Candidates_box = (gcnew System::Windows::Forms::RichTextBox());
-			this->Save_list_button = (gcnew System::Windows::Forms::Button());
-			this->Back_button = (gcnew System::Windows::Forms::Button());
+			this->Delete_candidate_panel = (gcnew System::Windows::Forms::Panel());
+			this->Go_back = (gcnew System::Windows::Forms::Button());
+			this->Delete = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->Change_candidate_panel = (gcnew System::Windows::Forms::Panel());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->radioButton8 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton7 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
 			this->Main_panel->SuspendLayout();
 			this->Candidates_list_panel->SuspendLayout();
 			this->Add_candidate_panel->SuspendLayout();
+			this->Delete_candidate_panel->SuspendLayout();
+			this->Change_candidate_panel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Show_candidates_button
@@ -142,7 +184,7 @@ namespace Project {
 			this->Change_date_button->TabIndex = 1;
 			this->Change_date_button->Text = L"Изменить данные о кандидате";
 			this->Change_date_button->UseVisualStyleBackColor = true;
-			this->Change_date_button->Click += gcnew System::EventHandler(this, &M_main::button2_Click);
+			this->Change_date_button->Click += gcnew System::EventHandler(this, &M_main::Change_date_button_Click);
 			// 
 			// add_candidate_button
 			// 
@@ -168,6 +210,7 @@ namespace Project {
 			this->delete_candidate_button->TabIndex = 3;
 			this->delete_candidate_button->Text = L"Удалить кандидата";
 			this->delete_candidate_button->UseVisualStyleBackColor = true;
+			this->delete_candidate_button->Click += gcnew System::EventHandler(this, &M_main::delete_candidate_button_Click);
 			// 
 			// Main_panel
 			// 
@@ -193,6 +236,43 @@ namespace Project {
 			this->Candidates_list_panel->Name = L"Candidates_list_panel";
 			this->Candidates_list_panel->Size = System::Drawing::Size(580, 550);
 			this->Candidates_list_panel->TabIndex = 5;
+			// 
+			// Candidates_box
+			// 
+			this->Candidates_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Candidates_box->Location = System::Drawing::Point(12, 12);
+			this->Candidates_box->Name = L"Candidates_box";
+			this->Candidates_box->ReadOnly = true;
+			this->Candidates_box->ScrollBars = System::Windows::Forms::RichTextBoxScrollBars::Vertical;
+			this->Candidates_box->Size = System::Drawing::Size(556, 463);
+			this->Candidates_box->TabIndex = 5;
+			this->Candidates_box->Text = L"Это выводимый текст, который можно прокручивать!";
+			// 
+			// Save_list_button
+			// 
+			this->Save_list_button->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Save_list_button->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 12, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Save_list_button->Location = System::Drawing::Point(357, 483);
+			this->Save_list_button->Name = L"Save_list_button";
+			this->Save_list_button->Size = System::Drawing::Size(211, 59);
+			this->Save_list_button->TabIndex = 4;
+			this->Save_list_button->Text = L"Сохранить список";
+			this->Save_list_button->UseVisualStyleBackColor = true;
+			// 
+			// Back_button
+			// 
+			this->Back_button->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Back_button->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Back_button->Location = System::Drawing::Point(12, 483);
+			this->Back_button->Name = L"Back_button";
+			this->Back_button->Size = System::Drawing::Size(151, 59);
+			this->Back_button->TabIndex = 3;
+			this->Back_button->Text = L"Назад";
+			this->Back_button->UseVisualStyleBackColor = true;
+			this->Back_button->Click += gcnew System::EventHandler(this, &M_main::Back_button_Click);
 			// 
 			// Add_candidate_panel
 			// 
@@ -332,7 +412,7 @@ namespace Project {
 			this->Birthday_date->Size = System::Drawing::Size(199, 29);
 			this->Birthday_date->TabIndex = 3;
 			this->Birthday_date->Text = L"Дата рождения:";
-			this->Birthday_date->Click += gcnew System::EventHandler(this, &M_main::label1_Click);
+			//this->Birthday_date->Click += gcnew System::EventHandler(this, &M_main::label1_Click);
 			// 
 			// dateTimePicker
 			// 
@@ -342,7 +422,7 @@ namespace Project {
 			this->dateTimePicker->Name = L"dateTimePicker";
 			this->dateTimePicker->Size = System::Drawing::Size(260, 34);
 			this->dateTimePicker->TabIndex = 2;
-			this->dateTimePicker->ValueChanged += gcnew System::EventHandler(this, &M_main::dateTimePicker1_ValueChanged);
+			//this->dateTimePicker->ValueChanged += gcnew System::EventHandler(this, &M_main::dateTimePicker1_ValueChanged);
 			// 
 			// Name_label
 			// 
@@ -354,7 +434,7 @@ namespace Project {
 			this->Name_label->Size = System::Drawing::Size(266, 29);
 			this->Name_label->TabIndex = 1;
 			this->Name_label->Text = L"Фамилия и инициалы:";
-			this->Name_label->Click += gcnew System::EventHandler(this, &M_main::Name_label_Click);
+			//this->Name_label->Click += gcnew System::EventHandler(this, &M_main::Name_label_Click);
 			// 
 			// Input_name_box
 			// 
@@ -365,48 +445,244 @@ namespace Project {
 			this->Input_name_box->Size = System::Drawing::Size(260, 34);
 			this->Input_name_box->TabIndex = 0;
 			// 
-			// Candidates_box
+			// Delete_candidate_panel
 			// 
-			this->Candidates_box->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Delete_candidate_panel->Controls->Add(this->Go_back);
+			this->Delete_candidate_panel->Controls->Add(this->Delete);
+			this->Delete_candidate_panel->Controls->Add(this->label1);
+			this->Delete_candidate_panel->Controls->Add(this->comboBox1);
+			this->Delete_candidate_panel->Location = System::Drawing::Point(0, 0);
+			this->Delete_candidate_panel->Name = L"Delete_candidate_panel";
+			this->Delete_candidate_panel->Size = System::Drawing::Size(580, 550);
+			this->Delete_candidate_panel->TabIndex = 13;
+			// 
+			// Go_back
+			// 
+			this->Go_back->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Go_back->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Candidates_box->Location = System::Drawing::Point(12, 12);
-			this->Candidates_box->Name = L"Candidates_box";
-			this->Candidates_box->ReadOnly = true;
-			this->Candidates_box->ScrollBars = System::Windows::Forms::RichTextBoxScrollBars::Vertical;
-			this->Candidates_box->Size = System::Drawing::Size(556, 463);
-			this->Candidates_box->TabIndex = 5;
-			this->Candidates_box->Text = L"Это выводимый текст, который можно прокручивать!";
+			this->Go_back->Location = System::Drawing::Point(12, 481);
+			this->Go_back->Name = L"Go_back";
+			this->Go_back->Size = System::Drawing::Size(161, 54);
+			this->Go_back->TabIndex = 3;
+			this->Go_back->Text = L"Назад";
+			this->Go_back->UseVisualStyleBackColor = true;
+			this->Go_back->Click += gcnew System::EventHandler(this, &M_main::Back_button_Click);
 			// 
-			// Save_list_button
+			// Delete
 			// 
-			this->Save_list_button->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Save_list_button->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Save_list_button->Location = System::Drawing::Point(357, 483);
-			this->Save_list_button->Name = L"Save_list_button";
-			this->Save_list_button->Size = System::Drawing::Size(211, 59);
-			this->Save_list_button->TabIndex = 4;
-			this->Save_list_button->Text = L"Сохранить список";
-			this->Save_list_button->UseVisualStyleBackColor = true;
-			// 
-			// Back_button
-			// 
-			this->Back_button->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Back_button->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Delete->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->Delete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Back_button->Location = System::Drawing::Point(12, 483);
-			this->Back_button->Name = L"Back_button";
-			this->Back_button->Size = System::Drawing::Size(151, 59);
-			this->Back_button->TabIndex = 3;
-			this->Back_button->Text = L"Назад";
-			this->Back_button->UseVisualStyleBackColor = true;
-			this->Back_button->Click += gcnew System::EventHandler(this, &M_main::Back_button_Click);
+			this->Delete->Location = System::Drawing::Point(409, 481);
+			this->Delete->Name = L"Delete";
+			this->Delete->Size = System::Drawing::Size(159, 54);
+			this->Delete->TabIndex = 2;
+			this->Delete->Text = L"Удалить";
+			this->Delete->UseVisualStyleBackColor = true;
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label1->Location = System::Drawing::Point(24, 25);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(257, 29);
+			this->label1->TabIndex = 1;
+			this->label1->Text = L"Выберите кандидата:";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(29, 66);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(250, 33);
+			this->comboBox1->TabIndex = 0;
+			// 
+			// Change_candidate_panel
+			// 
+			this->Change_candidate_panel->Controls->Add(this->button2);
+			this->Change_candidate_panel->Controls->Add(this->button1);
+			this->Change_candidate_panel->Controls->Add(this->radioButton8);
+			this->Change_candidate_panel->Controls->Add(this->radioButton7);
+			this->Change_candidate_panel->Controls->Add(this->radioButton6);
+			this->Change_candidate_panel->Controls->Add(this->radioButton5);
+			this->Change_candidate_panel->Controls->Add(this->label5);
+			this->Change_candidate_panel->Controls->Add(this->textBox1);
+			this->Change_candidate_panel->Controls->Add(this->label4);
+			this->Change_candidate_panel->Controls->Add(this->dateTimePicker1);
+			this->Change_candidate_panel->Controls->Add(this->label3);
+			this->Change_candidate_panel->Controls->Add(this->label2);
+			this->Change_candidate_panel->Controls->Add(this->comboBox2);
+			this->Change_candidate_panel->Location = System::Drawing::Point(0, 0);
+			this->Change_candidate_panel->Name = L"Change_candidate_panel";
+			this->Change_candidate_panel->Size = System::Drawing::Size(580, 550);
+			this->Change_candidate_panel->TabIndex = 4;
+			// 
+			// button2
+			// 
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button2->Location = System::Drawing::Point(420, 486);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(148, 52);
+			this->button2->TabIndex = 12;
+			this->button2->Text = L"Изменить";
+			this->button2->UseVisualStyleBackColor = true;
+			// 
+			// button1
+			// 
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button1->Location = System::Drawing::Point(15, 486);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(148, 52);
+			this->button1->TabIndex = 11;
+			this->button1->Text = L"Назад";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &M_main::Back_button_Click);
+			// 
+			// radioButton8
+			// 
+			this->radioButton8->AutoSize = true;
+			this->radioButton8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->radioButton8->Location = System::Drawing::Point(34, 418);
+			this->radioButton8->Name = L"radioButton8";
+			this->radioButton8->Size = System::Drawing::Size(143, 29);
+			this->radioButton8->TabIndex = 10;
+			this->radioButton8->TabStop = true;
+			this->radioButton8->Text = L"radioButton8";
+			this->radioButton8->UseVisualStyleBackColor = true;
+			// 
+			// radioButton7
+			// 
+			this->radioButton7->AutoSize = true;
+			this->radioButton7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->radioButton7->Location = System::Drawing::Point(34, 391);
+			this->radioButton7->Name = L"radioButton7";
+			this->radioButton7->Size = System::Drawing::Size(143, 29);
+			this->radioButton7->TabIndex = 9;
+			this->radioButton7->TabStop = true;
+			this->radioButton7->Text = L"radioButton7";
+			this->radioButton7->UseVisualStyleBackColor = true;
+			// 
+			// radioButton6
+			// 
+			this->radioButton6->AutoSize = true;
+			this->radioButton6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->radioButton6->Location = System::Drawing::Point(34, 364);
+			this->radioButton6->Name = L"radioButton6";
+			this->radioButton6->Size = System::Drawing::Size(143, 29);
+			this->radioButton6->TabIndex = 8;
+			this->radioButton6->TabStop = true;
+			this->radioButton6->Text = L"radioButton6";
+			this->radioButton6->UseVisualStyleBackColor = true;
+			// 
+			// radioButton5
+			// 
+			this->radioButton5->AutoSize = true;
+			this->radioButton5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->radioButton5->Location = System::Drawing::Point(34, 337);
+			this->radioButton5->Name = L"radioButton5";
+			this->radioButton5->Size = System::Drawing::Size(143, 29);
+			this->radioButton5->TabIndex = 7;
+			this->radioButton5->TabStop = true;
+			this->radioButton5->Text = L"radioButton5";
+			this->radioButton5->UseVisualStyleBackColor = true;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label5->Location = System::Drawing::Point(29, 305);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(213, 29);
+			this->label5->TabIndex = 6;
+			this->label5->Text = L"Место рождения:";
+			// 
+			// textBox1
+			// 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->textBox1->Location = System::Drawing::Point(29, 247);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(261, 30);
+			this->textBox1->TabIndex = 5;
+			//this->textBox1->TextChanged += gcnew System::EventHandler(this, &M_main::textBox1_TextChanged);
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label4->Location = System::Drawing::Point(29, 215);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(213, 29);
+			this->label4->TabIndex = 4;
+			this->label4->Text = L"Место рождения:";
+			//this->label4->Click += gcnew System::EventHandler(this, &M_main::label4_Click);
+			// 
+			// dateTimePicker1
+			// 
+			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->dateTimePicker1->Location = System::Drawing::Point(29, 150);
+			this->dateTimePicker1->Name = L"dateTimePicker1";
+			this->dateTimePicker1->Size = System::Drawing::Size(261, 30);
+			this->dateTimePicker1->TabIndex = 3;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label3->Location = System::Drawing::Point(29, 118);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(199, 29);
+			this->label3->TabIndex = 2;
+			this->label3->Text = L"Дата рождения:";
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label2->Location = System::Drawing::Point(29, 35);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(257, 29);
+			this->label2->TabIndex = 1;
+			this->label2->Text = L"Выберите кандидата:";
+			// 
+			// comboBox2
+			// 
+			this->comboBox2->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->comboBox2->FormattingEnabled = true;
+			this->comboBox2->Location = System::Drawing::Point(29, 66);
+			this->comboBox2->Name = L"comboBox2";
+			this->comboBox2->Size = System::Drawing::Size(261, 33);
+			this->comboBox2->TabIndex = 0;
 			// 
 			// M_main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(582, 553);
+			this->Controls->Add(this->Change_candidate_panel);
+			this->Controls->Add(this->Delete_candidate_panel);
 			this->Controls->Add(this->Add_candidate_panel);
 			this->Controls->Add(this->Candidates_list_panel);
 			this->Controls->Add(this->Main_panel);
@@ -417,14 +693,14 @@ namespace Project {
 			this->Candidates_list_panel->ResumeLayout(false);
 			this->Add_candidate_panel->ResumeLayout(false);
 			this->Add_candidate_panel->PerformLayout();
+			this->Delete_candidate_panel->ResumeLayout(false);
+			this->Delete_candidate_panel->PerformLayout();
+			this->Change_candidate_panel->ResumeLayout(false);
+			this->Change_candidate_panel->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
-	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
 private: System::Void show_candidates_Click(System::Object^ sender, System::EventArgs^ e) {
 	Candidates_list_panel->Visible=true;
 	Main_panel->Visible=false;
@@ -432,20 +708,24 @@ private: System::Void show_candidates_Click(System::Object^ sender, System::Even
 private: System::Void Back_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	show_menu();
 }
-
 	   void show_menu() {
 		   Main_panel->Visible = true;
 		   Candidates_list_panel->Visible=false;
 		   Add_candidate_panel->Visible = false;
-}
-private: System::Void dateTimePicker1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void Name_label_Click(System::Object^ sender, System::EventArgs^ e) {
+		   Delete_candidate_panel->Visible = false;
+		   Change_candidate_panel->Visible = false;
 }
 private: System::Void add_candidate_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	Add_candidate_panel->Visible = true;
+	Main_panel->Visible = false;
+}
+private: System::Void delete_candidate_button_Click(System::Object^ sender, System::EventArgs^ e) {
+	Delete_candidate_panel->Visible = true;
+	Main_panel->Visible = false;
+}
+
+private: System::Void Change_date_button_Click(System::Object^ sender, System::EventArgs^ e) {
+	Change_candidate_panel->Visible = true;
 	Main_panel->Visible = false;
 }
 };

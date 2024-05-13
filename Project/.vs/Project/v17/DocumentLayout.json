@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
-      "RelativeMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|solutionrelative:M_main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|solutionrelative:M_main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|solutionrelative:M_main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,25 +26,25 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "M_main.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "DocumentMoniker": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h",
               "RelativeDocumentMoniker": "M_main.h",
               "ToolTip": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "M_main.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-12T06:36:42.111Z",
+              "WhenOpened": "2024-05-13T09:01:07.3Z",
               "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "M_main.h",
               "DocumentMoniker": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h",
               "RelativeDocumentMoniker": "M_main.h",
               "ToolTip": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h",
               "RelativeToolTip": "M_main.h",
-              "ViewState": "AQIAAKkBAAAAAAAAAAAwwMABAAAdAAAA",
+              "ViewState": "AQIAAJkBAAAAAAAAAAAewKgBAABTAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-05-11T19:59:37.796Z",
               "EditorCaption": ""
