@@ -1,3 +1,6 @@
-﻿  M_main.cpp
-  M_main.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+﻿  Candidate_list.cpp
+C:\Users\2212d\source\repos\Canditaes_repo\Project\Candidate_list.cpp(5,10): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\2212d\source\repos\Canditaes_repo\Project\Candidate_list.cpp(36,10): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\2212d\source\repos\Canditaes_repo\Project\Candidate_list.cpp(50,10): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  Candidate.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Project.vcxproj -> C:\Users\2212d\source\repos\Canditaes_repo\Project\x64\Debug\Project.exe
