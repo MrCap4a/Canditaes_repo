@@ -1,7 +1,7 @@
 #include "Candidate_list.h"
 #include <fstream>
 
-void Candidate_list::add(Candidate cand) {
+/*void Candidate_list::add(Candidate cand) {
 	std::vector <Candidate> new_vector;
 	int len = list.size();
 	int i = 0;
@@ -30,8 +30,7 @@ void Candidate_list::add(Candidate cand) {
 	}
 
 	list = new_vector;
-	size = list.size();
-}
+} */
 
 void Candidate_list::remove(std::string name) {
 	std::vector <Candidate> new_vector;
@@ -46,7 +45,6 @@ void Candidate_list::remove(std::string name) {
 	}
 
 	list = new_vector;
-	size = list.size();
 }
 
 void Candidate_list::change(std::string name, Candidate data) {

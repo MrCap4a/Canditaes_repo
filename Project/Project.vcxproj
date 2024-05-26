@@ -120,7 +120,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Candidate.cpp" />
     <ClCompile Include="Candidate_list.cpp" />
     <ClCompile Include="MessageForm.cpp" />
     <ClCompile Include="M_main.cpp" />

@@ -1,5 +1,5 @@
-﻿  MessageForm.cpp
-  M_main.cpp
+﻿  M_main.cpp
+  MessageForm.cpp
   Создание кода...
-  Candidate.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  Candidate_list.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
   Project.vcxproj -> C:\Users\2212d\source\repos\Canditaes_repo\Project\x64\Debug\Project.exe

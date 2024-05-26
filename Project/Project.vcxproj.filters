@@ -18,9 +18,6 @@
     <ClCompile Include="M_main.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Candidate.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="Candidate_list.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>

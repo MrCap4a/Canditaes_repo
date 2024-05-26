@@ -119,7 +119,7 @@ namespace Project {
 			this->reg_error->AutoSize = true;
 			this->reg_error->Font = (gcnew System::Drawing::Font(L"Playbill", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->reg_error->Location = System::Drawing::Point(42, 75);
+			this->reg_error->Location = System::Drawing::Point(26, 75);
 			this->reg_error->Name = L"reg_error";
 			this->reg_error->Size = System::Drawing::Size(386, 23);
 			this->reg_error->TabIndex = 4;
@@ -130,7 +130,7 @@ namespace Project {
 			this->del_error->AutoSize = true;
 			this->del_error->Font = (gcnew System::Drawing::Font(L"Playbill", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->del_error->Location = System::Drawing::Point(20, 75);
+			this->del_error->Location = System::Drawing::Point(3, 75);
 			this->del_error->Name = L"del_error";
 			this->del_error->Size = System::Drawing::Size(423, 23);
 			this->del_error->TabIndex = 5;
@@ -141,7 +141,7 @@ namespace Project {
 			this->del_message->AutoSize = true;
 			this->del_message->Font = (gcnew System::Drawing::Font(L"Playbill", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->del_message->Location = System::Drawing::Point(104, 75);
+			this->del_message->Location = System::Drawing::Point(80, 75);
 			this->del_message->Name = L"del_message";
 			this->del_message->Size = System::Drawing::Size(244, 23);
 			this->del_message->TabIndex = 6;
@@ -153,7 +153,7 @@ namespace Project {
 			this->reg_message->AutoSize = true;
 			this->reg_message->Font = (gcnew System::Drawing::Font(L"Playbill", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->reg_message->Location = System::Drawing::Point(65, 75);
+			this->reg_message->Location = System::Drawing::Point(41, 75);
 			this->reg_message->Name = L"reg_message";
 			this->reg_message->Size = System::Drawing::Size(330, 23);
 			this->reg_message->TabIndex = 7;
