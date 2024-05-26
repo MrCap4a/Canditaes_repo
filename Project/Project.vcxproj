@@ -122,16 +122,23 @@
   <ItemGroup>
     <ClCompile Include="Candidate.cpp" />
     <ClCompile Include="Candidate_list.cpp" />
+    <ClCompile Include="MessageForm.cpp" />
     <ClCompile Include="M_main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Candidate.h" />
     <ClInclude Include="Candidate_list.h" />
+    <ClInclude Include="MessageForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="M_main.h">
       <FileType>CppForm</FileType>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MessageForm.resx">
+      <DependentUpon>MessageForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="M_main.resx">
       <DependentUpon>M_main.h</DependentUpon>
     </EmbeddedResource>

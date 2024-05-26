@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\Candidate_list.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|solutionrelative:Candidate_list.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|solutionrelative:M_main.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\Candidate_list.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|solutionrelative:Candidate_list.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\MessageForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|solutionrelative:MessageForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\Candidate.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|solutionrelative:Candidate.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\MessageForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form",
+      "RelativeMoniker": "D:0:0:{9A4B6C92-311A-4DE3-8476-2E0083F08B04}|Project.vcxproj|solutionrelative:MessageForm.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,41 +30,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Candidate.h",
-              "DocumentMoniker": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\Candidate.h",
-              "RelativeDocumentMoniker": "Candidate.h",
-              "ToolTip": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\Candidate.h",
-              "RelativeToolTip": "Candidate.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "MessageForm.h",
+              "DocumentMoniker": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\MessageForm.h",
+              "RelativeDocumentMoniker": "MessageForm.h",
+              "ToolTip": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\MessageForm.h",
+              "RelativeToolTip": "MessageForm.h",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAiwC0AAAAaAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-20T19:49:03.867Z",
+              "WhenOpened": "2024-05-26T09:40:21.99Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Candidate_list.h",
-              "DocumentMoniker": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\Candidate_list.h",
-              "RelativeDocumentMoniker": "Candidate_list.h",
-              "ToolTip": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\Candidate_list.h",
-              "RelativeToolTip": "Candidate_list.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
+              "DocumentIndex": 2,
+              "Title": "MessageForm.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\MessageForm.h",
+              "RelativeDocumentMoniker": "MessageForm.h",
+              "ToolTip": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\MessageForm.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "MessageForm.h [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-05-15T10:31:50.993Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-26T09:36:03.312Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Candidate_list.cpp",
-              "DocumentMoniker": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\Candidate_list.cpp",
-              "RelativeDocumentMoniker": "Candidate_list.cpp",
-              "ToolTip": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\Candidate_list.cpp",
-              "RelativeToolTip": "Candidate_list.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADAAAAA9AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-05-13T11:32:06.592Z",
+              "Title": "M_main.h",
+              "DocumentMoniker": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h",
+              "RelativeDocumentMoniker": "M_main.h",
+              "ToolTip": "C:\\Users\\2212d\\source\\repos\\Canditaes_repo\\Project\\M_main.h",
+              "RelativeToolTip": "M_main.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-05-25T15:39:46.787Z",
               "EditorCaption": ""
             }
           ]

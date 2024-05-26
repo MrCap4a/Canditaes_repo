@@ -1,4 +1,5 @@
 #include "Candidate_list.h"
+#include <fstream>
 
 void Candidate_list::add(Candidate cand) {
 	std::vector <Candidate> new_vector;
@@ -29,6 +30,7 @@ void Candidate_list::add(Candidate cand) {
 	}
 
 	list = new_vector;
+	size = list.size();
 }
 
 void Candidate_list::remove(std::string name) {
@@ -44,6 +46,7 @@ void Candidate_list::remove(std::string name) {
 	}
 
 	list = new_vector;
+	size = list.size();
 }
 
 void Candidate_list::change(std::string name, Candidate data) {
@@ -54,4 +57,66 @@ void Candidate_list::change(std::string name, Candidate data) {
 			break;
 		}
 	}
+}
+
+void Candidate_list::write_file() {
+	std::ofstream out_file("data.txt");
+	for (int i = 0; i != list.size(); i++) {
+		Candidate c = list[i];
+		std::string res_str = c.name + ";" + c.birth_place + ";" + c.birth_date + ";" + c.popularity_idx + ";";
+		out_file << res_str << std::endl;
+	}
+	out_file.close();
+}
+
+void Candidate_list::read_file() {
+	std::ifstream in_file("data.txt");
+	std::string line;
+	char separator = ';';
+	while (std::getline(in_file, line)) {
+		std::string name = "";
+		std::string birth_date = "";
+		std::string birth_city = "";
+		std::string popularity = "";
+		int pos = 1;
+		std::string t = "";
+		for (int i = 0; i != line.size(); i++) {
+			if (line[i] != separator) {
+				t += line[i];
+				}
+			else {
+				switch (pos){
+				case 1:
+					name = t;
+					break;
+				case 2:
+					birth_city = t;
+					break;
+				case 3:
+					birth_date = t;
+					break;
+				case 4:
+					popularity = t;
+					break;
+				}
+				t = "";
+				if (pos != 4) {
+					pos += 1;
+				}
+				else {
+					pos = 1;
+				}
+			}
+		}
+
+		Candidate new_c;
+		new_c.name = name;
+		new_c.birth_place = birth_city;
+		new_c.birth_date = birth_date;
+		new_c.popularity_idx = popularity;
+
+		//Candidate_list::add(new_c);
+		list.push_back(new_c);
+	}
+	in_file.close();
 }

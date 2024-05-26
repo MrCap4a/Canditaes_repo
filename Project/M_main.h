@@ -1,4 +1,9 @@
 #pragma once
+#include "Candidate_list.h"
+#include <iostream>
+#include "MessageForm.h"
+
+Candidate_list data_list;
 
 namespace Project {
 
@@ -18,10 +23,19 @@ namespace Project {
 		M_main(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: добавьте код конструктора
-			//
+
+			data_list.read_file();
+
 			show_menu();
+		}
+
+		std::string StoS(String^ text) {
+			std::string res = "";
+			for each (char c in text)
+			{
+				res.push_back(c);
+			}
+			return res;
 		}
 
 	protected:
@@ -45,7 +59,7 @@ namespace Project {
 	private: System::Windows::Forms::Panel^ Candidates_list_panel;
 
 	private: System::Windows::Forms::RichTextBox^ Candidates_box;
-	private: System::Windows::Forms::Button^ Save_list_button;
+
 	private: System::Windows::Forms::Button^ Back_button;
 	private: System::Windows::Forms::TextBox^ Input_name_box;
 	private: System::Windows::Forms::Panel^ Add_candidate_panel;
@@ -118,7 +132,6 @@ namespace Project {
 			this->Main_panel = (gcnew System::Windows::Forms::Panel());
 			this->Candidates_list_panel = (gcnew System::Windows::Forms::Panel());
 			this->Candidates_box = (gcnew System::Windows::Forms::RichTextBox());
-			this->Save_list_button = (gcnew System::Windows::Forms::Button());
 			this->Back_button = (gcnew System::Windows::Forms::Button());
 			this->Add_candidate_panel = (gcnew System::Windows::Forms::Panel());
 			this->Register = (gcnew System::Windows::Forms::Button());
@@ -230,7 +243,6 @@ namespace Project {
 			// Candidates_list_panel
 			// 
 			this->Candidates_list_panel->Controls->Add(this->Candidates_box);
-			this->Candidates_list_panel->Controls->Add(this->Save_list_button);
 			this->Candidates_list_panel->Controls->Add(this->Back_button);
 			this->Candidates_list_panel->Location = System::Drawing::Point(0, 0);
 			this->Candidates_list_panel->Name = L"Candidates_list_panel";
@@ -248,18 +260,6 @@ namespace Project {
 			this->Candidates_box->Size = System::Drawing::Size(556, 463);
 			this->Candidates_box->TabIndex = 5;
 			this->Candidates_box->Text = L"Это выводимый текст, который можно прокручивать!";
-			// 
-			// Save_list_button
-			// 
-			this->Save_list_button->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Save_list_button->Font = (gcnew System::Drawing::Font(L"MS Reference Sans Serif", 12, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Save_list_button->Location = System::Drawing::Point(357, 483);
-			this->Save_list_button->Name = L"Save_list_button";
-			this->Save_list_button->Size = System::Drawing::Size(211, 59);
-			this->Save_list_button->TabIndex = 4;
-			this->Save_list_button->Text = L"Сохранить список";
-			this->Save_list_button->UseVisualStyleBackColor = true;
 			// 
 			// Back_button
 			// 
@@ -305,6 +305,7 @@ namespace Project {
 			this->Register->TabIndex = 12;
 			this->Register->Text = L"Зарегистрировать";
 			this->Register->UseVisualStyleBackColor = true;
+			this->Register->Click += gcnew System::EventHandler(this, &M_main::Register_Click);
 			// 
 			// Back
 			// 
@@ -337,10 +338,10 @@ namespace Project {
 				static_cast<System::Byte>(204)));
 			this->radioButton4->Location = System::Drawing::Point(29, 418);
 			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(143, 29);
+			this->radioButton4->Size = System::Drawing::Size(55, 29);
 			this->radioButton4->TabIndex = 9;
 			this->radioButton4->TabStop = true;
-			this->radioButton4->Text = L"radioButton4";
+			this->radioButton4->Text = L"15";
 			this->radioButton4->UseVisualStyleBackColor = true;
 			// 
 			// radioButton3
@@ -350,10 +351,10 @@ namespace Project {
 				static_cast<System::Byte>(204)));
 			this->radioButton3->Location = System::Drawing::Point(29, 391);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(143, 29);
+			this->radioButton3->Size = System::Drawing::Size(55, 29);
 			this->radioButton3->TabIndex = 8;
 			this->radioButton3->TabStop = true;
-			this->radioButton3->Text = L"radioButton3";
+			this->radioButton3->Text = L"40";
 			this->radioButton3->UseVisualStyleBackColor = true;
 			// 
 			// radioButton2
@@ -363,10 +364,10 @@ namespace Project {
 				static_cast<System::Byte>(204)));
 			this->radioButton2->Location = System::Drawing::Point(29, 364);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(143, 29);
+			this->radioButton2->Size = System::Drawing::Size(55, 29);
 			this->radioButton2->TabIndex = 7;
 			this->radioButton2->TabStop = true;
-			this->radioButton2->Text = L"radioButton2";
+			this->radioButton2->Text = L"60";
 			this->radioButton2->UseVisualStyleBackColor = true;
 			// 
 			// radioButton1
@@ -376,10 +377,10 @@ namespace Project {
 				static_cast<System::Byte>(204)));
 			this->radioButton1->Location = System::Drawing::Point(29, 337);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(143, 29);
+			this->radioButton1->Size = System::Drawing::Size(55, 29);
 			this->radioButton1->TabIndex = 6;
 			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"radioButton1";
+			this->radioButton1->Text = L"75";
 			this->radioButton1->UseVisualStyleBackColor = true;
 			// 
 			// Birth_city
@@ -412,7 +413,6 @@ namespace Project {
 			this->Birthday_date->Size = System::Drawing::Size(199, 29);
 			this->Birthday_date->TabIndex = 3;
 			this->Birthday_date->Text = L"Дата рождения:";
-			//this->Birthday_date->Click += gcnew System::EventHandler(this, &M_main::label1_Click);
 			// 
 			// dateTimePicker
 			// 
@@ -422,7 +422,6 @@ namespace Project {
 			this->dateTimePicker->Name = L"dateTimePicker";
 			this->dateTimePicker->Size = System::Drawing::Size(260, 34);
 			this->dateTimePicker->TabIndex = 2;
-			//this->dateTimePicker->ValueChanged += gcnew System::EventHandler(this, &M_main::dateTimePicker1_ValueChanged);
 			// 
 			// Name_label
 			// 
@@ -434,7 +433,6 @@ namespace Project {
 			this->Name_label->Size = System::Drawing::Size(266, 29);
 			this->Name_label->TabIndex = 1;
 			this->Name_label->Text = L"Фамилия и инициалы:";
-			//this->Name_label->Click += gcnew System::EventHandler(this, &M_main::Name_label_Click);
 			// 
 			// Input_name_box
 			// 
@@ -480,6 +478,7 @@ namespace Project {
 			this->Delete->TabIndex = 2;
 			this->Delete->Text = L"Удалить";
 			this->Delete->UseVisualStyleBackColor = true;
+			this->Delete->Click += gcnew System::EventHandler(this, &M_main::Delete_Click);
 			// 
 			// label1
 			// 
@@ -535,6 +534,7 @@ namespace Project {
 			this->button2->TabIndex = 12;
 			this->button2->Text = L"Изменить";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &M_main::button2_Click);
 			// 
 			// button1
 			// 
@@ -556,10 +556,10 @@ namespace Project {
 				static_cast<System::Byte>(204)));
 			this->radioButton8->Location = System::Drawing::Point(34, 418);
 			this->radioButton8->Name = L"radioButton8";
-			this->radioButton8->Size = System::Drawing::Size(143, 29);
+			this->radioButton8->Size = System::Drawing::Size(55, 29);
 			this->radioButton8->TabIndex = 10;
 			this->radioButton8->TabStop = true;
-			this->radioButton8->Text = L"radioButton8";
+			this->radioButton8->Text = L"15";
 			this->radioButton8->UseVisualStyleBackColor = true;
 			// 
 			// radioButton7
@@ -569,10 +569,10 @@ namespace Project {
 				static_cast<System::Byte>(204)));
 			this->radioButton7->Location = System::Drawing::Point(34, 391);
 			this->radioButton7->Name = L"radioButton7";
-			this->radioButton7->Size = System::Drawing::Size(143, 29);
+			this->radioButton7->Size = System::Drawing::Size(55, 29);
 			this->radioButton7->TabIndex = 9;
 			this->radioButton7->TabStop = true;
-			this->radioButton7->Text = L"radioButton7";
+			this->radioButton7->Text = L"40";
 			this->radioButton7->UseVisualStyleBackColor = true;
 			// 
 			// radioButton6
@@ -582,10 +582,10 @@ namespace Project {
 				static_cast<System::Byte>(204)));
 			this->radioButton6->Location = System::Drawing::Point(34, 364);
 			this->radioButton6->Name = L"radioButton6";
-			this->radioButton6->Size = System::Drawing::Size(143, 29);
+			this->radioButton6->Size = System::Drawing::Size(55, 29);
 			this->radioButton6->TabIndex = 8;
 			this->radioButton6->TabStop = true;
-			this->radioButton6->Text = L"radioButton6";
+			this->radioButton6->Text = L"60";
 			this->radioButton6->UseVisualStyleBackColor = true;
 			// 
 			// radioButton5
@@ -595,10 +595,10 @@ namespace Project {
 				static_cast<System::Byte>(204)));
 			this->radioButton5->Location = System::Drawing::Point(34, 337);
 			this->radioButton5->Name = L"radioButton5";
-			this->radioButton5->Size = System::Drawing::Size(143, 29);
+			this->radioButton5->Size = System::Drawing::Size(55, 29);
 			this->radioButton5->TabIndex = 7;
 			this->radioButton5->TabStop = true;
-			this->radioButton5->Text = L"radioButton5";
+			this->radioButton5->Text = L"75";
 			this->radioButton5->UseVisualStyleBackColor = true;
 			// 
 			// label5
@@ -608,9 +608,9 @@ namespace Project {
 				static_cast<System::Byte>(204)));
 			this->label5->Location = System::Drawing::Point(29, 305);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(213, 29);
+			this->label5->Size = System::Drawing::Size(264, 29);
 			this->label5->TabIndex = 6;
-			this->label5->Text = L"Место рождения:";
+			this->label5->Text = L"Индекс популярности:";
 			// 
 			// textBox1
 			// 
@@ -620,7 +620,6 @@ namespace Project {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(261, 30);
 			this->textBox1->TabIndex = 5;
-			//this->textBox1->TextChanged += gcnew System::EventHandler(this, &M_main::textBox1_TextChanged);
 			// 
 			// label4
 			// 
@@ -632,7 +631,6 @@ namespace Project {
 			this->label4->Size = System::Drawing::Size(213, 29);
 			this->label4->TabIndex = 4;
 			this->label4->Text = L"Место рождения:";
-			//this->label4->Click += gcnew System::EventHandler(this, &M_main::label4_Click);
 			// 
 			// dateTimePicker1
 			// 
@@ -686,9 +684,11 @@ namespace Project {
 			this->Controls->Add(this->Add_candidate_panel);
 			this->Controls->Add(this->Candidates_list_panel);
 			this->Controls->Add(this->Main_panel);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedToolWindow;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"M_main";
 			this->Text = L"Программа учёта кандидатов";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &M_main::M_main_FormClosing);
 			this->Main_panel->ResumeLayout(false);
 			this->Candidates_list_panel->ResumeLayout(false);
 			this->Add_candidate_panel->ResumeLayout(false);
@@ -702,6 +702,15 @@ namespace Project {
 		}
 #pragma endregion
 private: System::Void show_candidates_Click(System::Object^ sender, System::EventArgs^ e) {
+	std::string res = "";
+	for (int i = 0; i != data_list.list.size(); i++) {
+		std::string resm = "";
+		Candidate c = data_list.list[i];
+		resm = c.name + ":" + "\n" + "   Место рождения: " + c.birth_place + "\n" + "   Дата рождения: " + c.birth_date + "\n" + "   Индекс популярности: " + c.popularity_idx + "\n\n";
+		res += resm;
+	}
+	String^ res_str = gcnew String(res.c_str());
+	Candidates_box->Text = res_str;
 	Candidates_list_panel->Visible=true;
 	Main_panel->Visible=false;
 }
@@ -722,11 +731,142 @@ private: System::Void add_candidate_button_Click(System::Object^ sender, System:
 private: System::Void delete_candidate_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	Delete_candidate_panel->Visible = true;
 	Main_panel->Visible = false;
+	comboBox1->Items->Clear();
+
+	std::vector <std::string> names;
+	for each (Candidate c in data_list.list)
+	{
+		comboBox1->Items->Add(gcnew String(c.name.c_str()));
+	}
 }
 
 private: System::Void Change_date_button_Click(System::Object^ sender, System::EventArgs^ e) {
 	Change_candidate_panel->Visible = true;
 	Main_panel->Visible = false;
+
+	comboBox2->Items->Clear();
+
+	std::vector <std::string> names;
+	for each (Candidate c in data_list.list)
+	{
+		comboBox2->Items->Add(gcnew String(c.name.c_str()));
+	}
+}
+private: System::Void M_main_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+	data_list.write_file();
+}
+private: System::Void Register_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (Input_name_box->Text) {
+		if (Birth_city_box->Text) {
+			if (radioButton1 -> Checked || radioButton2 -> Checked || radioButton3 -> Checked || radioButton4 -> Checked) {
+				Candidate new_c;
+				new_c.name = StoS(Input_name_box->Text);
+				bool good = true;
+				for each  (Candidate c in data_list.list)
+				{
+					if (c.name == new_c.name) {
+						good = false;
+						break;
+					}
+				}
+				if (good) {
+					new_c.birth_date = StoS(dateTimePicker->Value.ToString("d"));
+					new_c.birth_place = StoS(Birth_city_box->Text);
+					if (radioButton1 -> Checked) {
+						new_c.popularity_idx = "75";
+					}
+					else {
+						if (radioButton2 -> Checked) {
+							new_c.popularity_idx = "60";
+						}
+						else {
+							if (radioButton3 -> Checked) {
+								new_c.popularity_idx = "40";
+							}
+							else {
+								if (radioButton4 -> Checked) {
+									new_c.popularity_idx = "15";
+								}
+							}
+						}
+					}
+					data_list.list.push_back(new_c);
+					MessageForm^ MessageFormReg = gcnew MessageForm();
+					MessageFormReg->Show();
+					MessageFormReg->freg_message();
+				}
+				else {
+					MessageForm^ ErrorFormReg = gcnew MessageForm();
+					ErrorFormReg->Show();
+					ErrorFormReg->freg_error();
+				}
+			}
+		}
+	}
+}
+private: System::Void Delete_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ selectedValue = comboBox1->Text;
+	std::string selected_name = StoS(selectedValue);
+	if (selected_name != "") {
+		bool good = false;
+		for each (Candidate c in data_list.list)
+		{
+			if (c.name == selected_name) {
+				good = true;
+				break;
+			}
+		}
+		if (good) {
+			data_list.remove(selected_name);
+			MessageForm^ DelFormMessage = gcnew MessageForm();
+			DelFormMessage->Show();
+			DelFormMessage->fdel_message();
+		}
+		else {
+			MessageForm^ DelFormError = gcnew MessageForm();
+			DelFormError->Show();
+			DelFormError->fdel_error();
+		}
+	}
+}
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	String^ selectedValue = comboBox2->Text;
+	std::string selected_name = StoS(selectedValue);
+	if (selected_name != "") {
+		if (textBox1->Text) {
+			if (radioButton5->Checked == true || radioButton6->Checked == true || radioButton7->Checked == true || radioButton8->Checked == true) {
+				for(int c_idx = 0; c_idx != data_list.list.size(); c_idx++)
+				{
+					if (data_list.list[c_idx].name == selected_name) {
+						data_list.list[c_idx].birth_date = StoS(dateTimePicker1->Value.ToString("d"));
+						data_list.list[c_idx].birth_place = StoS(textBox1->Text);
+						if (radioButton5->Checked) {
+							data_list.list[c_idx].popularity_idx = "75";
+						}
+						else {
+							if (radioButton6->Checked) {
+								data_list.list[c_idx].popularity_idx = "60";
+							}
+							else {
+								if (radioButton7->Checked) {
+									data_list.list[c_idx].popularity_idx = "40";
+								}
+								else {
+									if (radioButton8->Checked) {
+										data_list.list[c_idx].popularity_idx = "15";
+									}
+								}
+							}
+						}
+						break;
+					}
+				}
+				MessageForm^ ChangeFormMessage = gcnew MessageForm();
+				ChangeFormMessage->Show();
+				ChangeFormMessage->fchange_message();
+			}
+		}
+	}
 }
 };
 }

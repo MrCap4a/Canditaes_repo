@@ -7,6 +7,6 @@ public:
 	std::string name = "null";
 	std::string birth_date;
 	std::string birth_place;
-	int popularity_idx;
+	std::string popularity_idx = "null";
 };
 
